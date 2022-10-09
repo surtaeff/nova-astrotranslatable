@@ -1,6 +1,6 @@
 <?php
 
-namespace Outl1ne\NovaTranslatable\Rules;
+namespace Kiritokatklian\NovaAstrotranslatable\Rules;
 
 use Laravel\Nova\Nova;
 use Laravel\Nova\Rules\NotExactlyAttached;
