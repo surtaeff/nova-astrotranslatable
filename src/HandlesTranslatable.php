@@ -1,6 +1,6 @@
 <?php
 
-namespace Outl1ne\NovaTranslatable;
+namespace Kiritokatklian\NovaAstrotranslatable;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Validator;

@@ -1,23 +1,27 @@
 {
-  "name": "outl1ne/nova-translatable",
-  "description": "A laravel-translatable extension for Laravel Nova.",
+  "name": "kiritokatklian/nova-astrotranslatable",
+  "description": "An astrotomic/laravel-translatable extension for Laravel Nova.",
   "keywords": [
     "laravel",
     "nova",
     "translatable",
     "i18n",
-    "translate"
+    "translate",
+    "astrotomic"
   ],
   "authors": [
     {
       "name": "Tarvo Reinpalu",
-      "email": "tarvoreinpalu@gmail.com",
-      "role": "Developer"
+      "homepage": "https://github.com/Tarpsvo"
     },
     {
-      "name": "Outl1ne",
-      "email": "info@outl1ne.com",
-      "role": "Maintainer"
+      "name": "Optimist Digital",
+      "homepage": "https://github.com/optimistdigital"
+    },
+    {
+      "name": "Kiritokatklian",
+      "homepage": "https://kurozora.app",
+      "role": "Developer"
     }
   ],
   "license": "MIT",
@@ -25,17 +29,17 @@
     "php": ">=8.0",
     "laravel/nova": "^4.12",
     "nova-kit/nova-packages-tool": "^1.0",
-    "spatie/laravel-translatable": "^4.0 || ^5.0 || ^6.0"
+    "astrotomic/laravel-translatable": "^11.10"
   },
   "autoload": {
     "psr-4": {
-      "Outl1ne\\NovaTranslatable\\": "src/"
+      "Kiritokatklian\\NovaAstrotranslatable\\": "src/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Outl1ne\\NovaTranslatable\\FieldServiceProvider"
+        "Kiritokatklian\\NovaAstrotranslatable\\FieldServiceProvider"
       ]
     }
   },

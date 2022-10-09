@@ -1,9 +1,9 @@
 <?php
 
-namespace Outl1ne\NovaTranslatable\Fields;
+namespace Kiritokatklian\NovaAstrotranslatable\Fields;
 
 use Laravel\Nova\Fields\Field;
-use Outl1ne\NovaTranslatable\FieldServiceProvider;
+use Kiritokatklian\NovaAstrotranslatable\FieldServiceProvider;
 
 class LocaleSelect extends Field
 {
