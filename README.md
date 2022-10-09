@@ -50,7 +50,7 @@ Install the package in a Laravel Nova project via Composer:
 composer require kiritokatklian/nova-astrotranslatable
 
 # Publish configuration (optional, but useful for setting default locales)
-php artisan vendor:publish --tag="nova-astrotranslatable-config"
+php artisan vendor:publish --tag="nova-translatable-config"
 ```
 
 ## Usage
