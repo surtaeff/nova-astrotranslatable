@@ -136,7 +136,7 @@ class TranslatableFieldMixin
                     }
                 } else {
                     foreach ($locales as $localeKey => $localeName) {
-                        $model->translate($localeKey)->{$realAttribute} = $value[$localeKey];
+                        $model->translateOrNew($localeKey)->{$realAttribute} = $value[$localeKey];
                     }
                 }
             });
