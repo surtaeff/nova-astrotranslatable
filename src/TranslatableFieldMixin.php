@@ -90,7 +90,7 @@ class TranslatableFieldMixin
                 $hasValidationTrick = property_exists($this, '__validationTrick') && $this->__validationTrick;
                 if (in_array(request()->method(), ['PUT', 'POST']) && !$hasValidationTrick) {
                     $translations = $request->{$this->attribute};
-                    if (!empty($fillOtherLocalesFrom) && !empty($translations[$fillOtherLocalesFrom])) {
+                    if (!empty($fillOtherLocalesFrom) && !empty($translations) && !empty($translations[$fillOtherLocalesFrom])) {
                         foreach ($locales as $localeKey => $localeName) {
                             if (empty($translations[$localeKey])) $translations[$localeKey] = $translations[$fillOtherLocalesFrom];
                         }
@@ -136,6 +136,16 @@ class TranslatableFieldMixin
                     }
                 } else {
                     foreach ($locales as $localeKey => $localeName) {
+                        // A field hidden on the form (e.g. via dependsOn) is not
+                        // submitted, so the attribute may be absent from the payload
+                        // entirely. Nova's default fill skips absent fields, but a
+                        // fillUsing callback bypasses that check — skip here as well
+                        // instead of crashing on a null array offset or wiping
+                        // existing translations with empty values.
+                        if (!is_array($value) || !array_key_exists($localeKey, $value)) {
+                            continue;
+                        }
+
                         $model->translateOrNew($localeKey)->{$realAttribute} = $value[$localeKey];
                     }
                 }
